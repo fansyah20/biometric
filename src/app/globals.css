@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-display: "Manrope", "Segoe UI", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Inter", "Segoe UI", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", monospace;
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  background-color: #0f172a;
+  color: #f8fafc;
+  font-family: var(--font-body);
+}
+
+/* Kiosk hardware is typically touch-first: keep focus rings visible and
+   generous, and disable text selection on interactive chrome so a stray
+   touch-drag doesn't select UI copy on the public terminal. */
+button,
+a,
+[role="toolbar"] {
+  -webkit-tap-highlight-color: transparent;
+}
+
+::selection {
+  background-color: rgba(52, 211, 153, 0.35);
+}
+
+/* Respect reduced-motion preferences across the whole app. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* High-contrast mode toggle target, driven by AccessibilityContext. */
+.high-contrast {
+  --tw-bg-opacity: 1;
+  filter: contrast(1.35) brightness(1.05);
+}
+
+.font-scale-large {
+  font-size: 1.125rem;
+}
+
+.font-scale-xlarge {
+  font-size: 1.3rem;
+}
