@@ -118,15 +118,15 @@ export default function GovFlowLandingPage() {
       <header className="sticky top-0 z-30 border-b border-navy-900/10 bg-white/90 backdrop-blur">
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-6 py-4">
           <div className="flex items-center gap-3">
-            <div>
-             <Image
-              src="/images/palmid-hand-icon-transparent.png"
-              alt="Logo PalmID"
-              width={24}
-              height={24}
-              className="h-full w-full object-contain"
-            />
-             </div>
+            <div className="h-8 w-8">
+              <Image
+               src="/images/palmid-hand-icon-transparent.png"
+               alt="Logo PalmID"
+               width={24}
+               height={24}
+               className="h-full w-full object-contain"
+                />
+              </div>
             <span className="font-display text-lg font-bold">
               Palm<span className="text-gold-500">ID</span>
             </span>
@@ -473,15 +473,15 @@ export default function GovFlowLandingPage() {
       <footer className="bg-navy-950 pt-16 text-white/70">
         <div className="mx-auto grid max-w-7xl gap-10 px-6 pb-10 sm:grid-cols-2 lg:grid-cols-4">
           <div>
-            <div className="flex items-center gap-2">
-             <Image
+           <div className="flex h-10 w-10 items-center justify-center gap-2">
+            <Image
               src="/images/palmid-hand-icon-transparent.png"
               alt="Logo PalmID"
               width={24}
               height={24}
               className="h-full w-full object-contain"
             />
-             </div>
+            </div>
             <p className="mt-4 text-sm text-white/40">
               Mewujudkan inklusi identitas kewarganegaraan modern Indonesia yang
               mutakhir, tepercaya, dan ramah terhadap seluruh penyandang disabilitas.
