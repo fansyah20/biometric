@@ -28,7 +28,7 @@ export function AuthLeftPanel() {
       {/* Top: logo + badge */}
       <div className="relative z-10 p-10">
         <div className="mb-6 flex items-center gap-3">
-  <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-brand-700 p-1.5">
+  <div>
     <Image
       src="/images/palmid-hand-icon-transparent.png"
       alt="Logo PalmID"
