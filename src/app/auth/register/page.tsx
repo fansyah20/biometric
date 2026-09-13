@@ -3,11 +3,10 @@
 import { useState, type FormEvent } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { ArrowLeft } from "lucide-react";
-  import { AuthLeftPanel } from "@/components/layout/AuthLeftPanel";
+import { AuthLeftPanel } from "@/components/auth/AuthLeftPanel";
 import { Button } from "@/components/ui/Button";
 import { useAuth } from "@/context/AuthContext";
-import { Eye, EyeOff, Lock, Mail, Phone, ShieldCheck, User } from "lucide-react";
+import { ArrowLeft, Eye, EyeOff, Lock, Mail, Phone, ShieldCheck, User } from "lucide-react";
 
 const STRENGTH_COLORS = ["#EF4444", "#F97316", "#EAB308", "#10B981"];
 const STRENGTH_LABELS = ["Lemah", "Cukup", "Kuat", "Sangat Kuat"];
@@ -63,20 +62,20 @@ export default function RegisterPage() {
 
   return (
     <main className="flex min-h-screen flex-col bg-surface">
-
       <div className="flex flex-1">
         <AuthLeftPanel />
-        
+
         <div className="flex flex-1 items-center justify-center px-6 py-10">
           <div className="w-full max-w-[480px] rounded-2xl border border-surface-border bg-white p-8 shadow-lg">
-            {/* Mobile logo (left panel is hidden below lg) */}
             <Link
-          href="/"
-          className="mb-4 inline-flex items-center gap-1.5 text-sm font-medium text-ink-muted hover:text-brand-700"
-        >
-        <ArrowLeft className="h-4 w-4" aria-hidden="true" />
-          Kembali ke Beranda
-          </Link>
+              href="/"
+              className="mb-4 inline-flex items-center gap-1.5 text-sm font-medium text-ink-muted hover:text-brand-700"
+            >
+              <ArrowLeft className="h-4 w-4" aria-hidden="true" />
+              Kembali ke Beranda
+            </Link>
+
+            {/* Mobile logo (left panel is hidden below lg) */}
             <div className="mb-6 flex items-center gap-2 lg:hidden">
               <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-brand-700">
                 <ShieldCheck className="h-5 w-5 text-white" aria-hidden="true" />

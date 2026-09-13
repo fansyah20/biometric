@@ -1,5 +1,9 @@
+"use client";
+
 import Link from "next/link";
-import Image from "next/image"
+import Image from "next/image";
+import { SmoothScroll } from "@/components/motion/SmoothScroll";
+import { Reveal } from "@/components/motion/Reveal";
 import {
   Fingerprint,
   MapPin,
@@ -109,19 +113,20 @@ const NAV_LINKS = [
 export default function GovFlowLandingPage() {
   return (
     <main className="min-h-screen bg-white font-body text-navy-900">
+      <SmoothScroll />
       {/* ================= HEADER ================= */}
       <header className="sticky top-0 z-30 border-b border-navy-900/10 bg-white/90 backdrop-blur">
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-6 py-4">
           <div className="flex items-center gap-3">
-            <div>
-  <Image
-    src="/images/palmid-hand-icon-transparent.png"
-    alt="Logo PalmID"
-    width={24}
-    height={24}
-    className="h-full w-full object-contain"
-  />
-</div>
+            <div className="flex h-9 w-9 items-center justify-center rounded-full bg-navy-800 p-1.5">
+             <Image
+              src="/images/palmid-hand-icon.png"
+              alt="Logo PalmID"
+              width={24}
+              height={24}
+              className="h-full w-full object-contain"
+            />
+             </div>
             <span className="font-display text-lg font-bold">
               Palm<span className="text-gold-500">ID</span>
             </span>
@@ -147,10 +152,10 @@ export default function GovFlowLandingPage() {
               Cek Status Biometrik
             </a>
             <Link
-               href="/auth/login"
-               className="inline-flex items-center gap-2 rounded-full bg-gold-500 px-5 py-2.5 text-sm font-semibold text-navy-950 shadow-sm transition-colors hover:bg-gold-400"
-              >
-                Masuk Kios Publik →
+              href="/auth/login"
+              className="inline-flex items-center gap-2 rounded-full bg-gold-500 px-5 py-2.5 text-sm font-semibold text-navy-950 shadow-sm transition-colors hover:bg-gold-400"
+            >
+              Masuk Kios Publik →
             </Link>
           </div>
         </div>
@@ -159,7 +164,7 @@ export default function GovFlowLandingPage() {
       {/* ================= HERO ================= */}
       <section className="mx-auto max-w-7xl px-6 pb-20 pt-16 lg:pt-24">
         <div className="grid items-center gap-12 lg:grid-cols-2">
-          <div>
+          <Reveal>
             <span className="inline-flex items-center rounded-full border border-sky-300 px-4 py-1.5 text-xs font-semibold tracking-wide text-sky-600">
               NO-PHONE REQUIRED • BIOMETRIC CIVIC IDENTITY
             </span>
@@ -197,29 +202,36 @@ export default function GovFlowLandingPage() {
                 warga di seluruh wilayah uji coba.
               </p>
             </div>
-          </div>
+          </Reveal>
 
-          {/* Hero visual (placeholder, no external image) */}
-          <div className="relative">
-  <div className="relative aspect-[4/3] overflow-hidden rounded-3xl shadow-panel">
-    <Image
-      src="/images/image2.jpeg"
-      alt="Warga memverifikasi identitas lewat scan vena telapak tangan di kios PalmID"
-      fill
-      sizes="(min-width: 1024px) 50vw, 100vw"
-      className="object-cover"
-      priority
-    />
-  </div>
-  <div>
-  </div>
-</div>
+          {/* Hero visual */}
+          <Reveal delay={0.15} className="relative">
+            <div className="relative aspect-[4/3] overflow-hidden rounded-3xl shadow-panel">
+              <Image
+                src="/images/image2.jpeg"
+                alt="Warga memverifikasi identitas lewat scan vena telapak tangan di kios PalmID"
+                fill
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                className="object-cover"
+                priority
+              />
+            </div>
+            <div className="absolute bottom-4 right-4 flex items-center gap-3 rounded-2xl bg-navy-950/90 px-4 py-3 text-white shadow-lg">
+              <span className="flex h-8 w-8 items-center justify-center rounded-full bg-emerald-500/20">
+                <CheckCircle2 className="h-4 w-4 text-emerald-400" aria-hidden="true" />
+              </span>
+              <div className="text-left">
+                <p className="text-sm font-semibold">Vena Telapak Terdeteksi</p>
+                <p className="text-xs text-white/50">ZKP Validated • 0.8s</p>
+              </div>
+            </div>
+          </Reveal>
         </div>
       </section>
 
       {/* ================= STATS ================= */}
       <section className="border-y border-navy-900/10 bg-navy-50/40">
-        <div className="mx-auto grid max-w-7xl gap-8 px-6 py-14 sm:grid-cols-3">
+        <Reveal stagger className="mx-auto grid max-w-7xl gap-8 px-6 py-14 sm:grid-cols-3">
           {[
             {
               value: "99.99%",
@@ -243,23 +255,25 @@ export default function GovFlowLandingPage() {
               <p className="mt-1 text-sm text-navy-500">{stat.desc}</p>
             </div>
           ))}
-        </div>
+        </Reveal>
       </section>
 
       {/* ================= 4 PILAR LAYANAN ================= */}
       <section className="mx-auto max-w-7xl px-6 py-24 text-center">
-        <span className="inline-flex items-center rounded-full border border-gold-400 px-4 py-1.5 text-xs font-semibold text-gold-600">
-          LAYANAN KOMPREHENSIF
-        </span>
-        <h2 className="mx-auto mt-5 max-w-2xl font-display text-3xl font-extrabold text-navy-900 sm:text-4xl">
-          4 Pilar Layanan Publik Masa Depan
-        </h2>
-        <p className="mx-auto mt-4 max-w-2xl text-navy-500">
-          Satu pintu masuk aman menuju seluruh kebutuhan birokrasi dan administrasi
-          kewarganegaraan Anda di Republik Indonesia.
-        </p>
+        <Reveal>
+          <span className="inline-flex items-center rounded-full border border-gold-400 px-4 py-1.5 text-xs font-semibold text-gold-600">
+            LAYANAN KOMPREHENSIF
+          </span>
+          <h2 className="mx-auto mt-5 max-w-2xl font-display text-3xl font-extrabold text-navy-900 sm:text-4xl">
+            4 Pilar Layanan Publik Masa Depan
+          </h2>
+          <p className="mx-auto mt-4 max-w-2xl text-navy-500">
+            Satu pintu masuk aman menuju seluruh kebutuhan birokrasi dan administrasi
+            kewarganegaraan Anda di Republik Indonesia.
+          </p>
+        </Reveal>
 
-        <div className="mt-14 grid gap-6 text-left sm:grid-cols-2 lg:grid-cols-4">
+        <Reveal stagger className="mt-14 grid gap-6 text-left sm:grid-cols-2 lg:grid-cols-4">
           {PILARS.map((pilar) => (
             <div
               key={pilar.title}
@@ -287,24 +301,26 @@ export default function GovFlowLandingPage() {
               </ul>
             </div>
           ))}
-        </div>
+        </Reveal>
       </section>
 
       {/* ================= CARA KERJA ================= */}
       <section className="bg-navy-50/40 py-24">
         <div className="mx-auto max-w-7xl px-6 text-center">
-          <span className="inline-flex items-center rounded-full border border-gold-400 px-4 py-1.5 text-xs font-semibold text-gold-600">
-            ALUR PROSES 100% MANDIRI
-          </span>
-          <h2 className="mx-auto mt-5 max-w-2xl font-display text-3xl font-extrabold text-navy-900 sm:text-4xl">
-            Cara Kerja Kios Palm<span className="text-gold-500">ID</span>
-          </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-navy-500">
-            Nikmati kemudahan akses dalam 4 langkah instan tanpa perlu kartu maupun
-            dokumen cetak.
-          </p>
+          <Reveal>
+            <span className="inline-flex items-center rounded-full border border-gold-400 px-4 py-1.5 text-xs font-semibold text-gold-600">
+              ALUR PROSES 100% MANDIRI
+            </span>
+            <h2 className="mx-auto mt-5 max-w-2xl font-display text-3xl font-extrabold text-navy-900 sm:text-4xl">
+              Cara Kerja Kios Palm<span className="text-gold-500">ID</span>
+            </h2>
+            <p className="mx-auto mt-4 max-w-2xl text-navy-500">
+              Nikmati kemudahan akses dalam 4 langkah instan tanpa perlu kartu maupun
+              dokumen cetak.
+            </p>
+          </Reveal>
 
-          <div className="mt-14 grid gap-10 text-left sm:grid-cols-2 lg:grid-cols-4">
+          <Reveal stagger className="mt-14 grid gap-10 text-left sm:grid-cols-2 lg:grid-cols-4">
             {STEPS.map((step) => (
               <div key={step.number}>
                 <div className="flex items-center gap-3">
@@ -319,55 +335,57 @@ export default function GovFlowLandingPage() {
                 <p className="mt-2 text-sm text-navy-500">{step.desc}</p>
               </div>
             ))}
-          </div>
+          </Reveal>
         </div>
       </section>
 
       {/* ================= AKSESIBILITAS ================= */}
       <section className="mx-auto max-w-7xl px-6 py-24">
-  <div className="grid items-center gap-12 lg:grid-cols-2">
-    <div>
-      <span className="inline-flex items-center rounded-full border border-gold-400 px-4 py-1.5 text-xs font-semibold text-gold-600">
-        AKSESIBILITAS UNTUK SEMUA
-      </span>
-      <h2 className="mt-5 font-display text-3xl font-extrabold leading-tight text-navy-900 sm:text-4xl">
-        Identitas Digital yang Inklusif Tanpa Hambatan Fisik
-      </h2>
-      <p className="mt-4 text-navy-500">
-        GovFlow dirancang agar dapat diakses oleh seluruh lapisan masyarakat
-        Indonesia, termasuk penyandang disabilitas fisik, lansia, dan warga
-        rentan digital tanpa diskriminasi teknologi.
-      </p>
+        <div className="grid items-center gap-12 lg:grid-cols-2">
+          <div>
+            <Reveal>
+              <span className="inline-flex items-center rounded-full border border-gold-400 px-4 py-1.5 text-xs font-semibold text-gold-600">
+                AKSESIBILITAS UNTUK SEMUA
+              </span>
+              <h2 className="mt-5 font-display text-3xl font-extrabold leading-tight text-navy-900 sm:text-4xl">
+                Identitas Digital yang Inklusif Tanpa Hambatan Fisik
+              </h2>
+              <p className="mt-4 text-navy-500">
+                GovFlow dirancang agar dapat diakses oleh seluruh lapisan masyarakat
+                Indonesia, termasuk penyandang disabilitas fisik, lansia, dan warga
+                rentan digital tanpa diskriminasi teknologi.
+              </p>
+            </Reveal>
 
-      <div className="mt-8 grid gap-4 sm:grid-cols-2">
-        {ACCESSIBILITY_FEATURES.map((feat) => (
-          <div
-            key={feat.label}
-            className="flex items-center gap-3 rounded-xl border border-navy-900/10 px-4 py-4"
-          >
-            <feat.icon className="h-5 w-5 flex-shrink-0 text-sky-600" aria-hidden="true" />
-            <span className="text-sm font-medium text-navy-800">{feat.label}</span>
+            <Reveal stagger className="mt-8 grid gap-4 sm:grid-cols-2">
+              {ACCESSIBILITY_FEATURES.map((feat) => (
+                <div
+                  key={feat.label}
+                  className="flex items-center gap-3 rounded-xl border border-navy-900/10 px-4 py-4"
+                >
+                  <feat.icon className="h-5 w-5 flex-shrink-0 text-sky-600" aria-hidden="true" />
+                  <span className="text-sm font-medium text-navy-800">{feat.label}</span>
+                </div>
+              ))}
+            </Reveal>
           </div>
-        ))}
-      </div>
-    </div>
 
-    <div className="relative aspect-[4/3] overflow-hidden rounded-3xl">
-      <Image
-        src="/images/iamge1.jpeg"
-        alt="Warga lansia menggunakan kios biometrik yang ramah aksesibilitas"
-        fill
-        sizes="(min-width: 1024px) 50vw, 100vw"
-        className="object-cover"
-      />
-    </div>
-  </div>
-</section>
+          <Reveal delay={0.15} className="relative aspect-[4/3] overflow-hidden rounded-3xl">
+            <Image
+              src="/images/iamge1.jpeg"
+              alt="Warga lansia menggunakan kios biometrik yang ramah aksesibilitas"
+              fill
+              sizes="(min-width: 1024px) 50vw, 100vw"
+              className="object-cover"
+            />
+          </Reveal>
+        </div>
+      </section>
 
       {/* ================= ZKP SECURITY (DARK) ================= */}
       <section className="bg-navy-950 py-24 text-white">
         <div className="mx-auto grid max-w-7xl items-center gap-12 px-6 lg:grid-cols-2">
-          <div className="rounded-2xl border border-white/10 p-8">
+          <Reveal className="rounded-2xl border border-white/10 p-8">
             <p className="text-center font-display text-lg font-bold">
               Arsitektur Kriptografi ZKP GovFlow
             </p>
@@ -389,28 +407,30 @@ export default function GovFlowLandingPage() {
             <p className="mt-6 rounded-lg border border-sky-400/40 py-2.5 text-center text-xs font-semibold text-sky-300">
               Data Biometrik Tidak Pernah Meninggalkan Perangkat Lokal
             </p>
-          </div>
+          </Reveal>
 
           <div>
-            <span className="inline-flex items-center rounded-full border border-gold-400 px-4 py-1.5 text-xs font-semibold text-gold-400">
-              PRIVASI MUTLAK DIJAMIN
-            </span>
-            <h2 className="mt-5 font-display text-3xl font-extrabold leading-tight sm:text-4xl">
-              Kedaulatan Data Berbasis Zero-Knowledge Proofs
-            </h2>
-            <p className="mt-4 text-white/60">
-              Kios GovFlow menggunakan protokol ZKP yang revolusioner. Kios dapat
-              mengonfirmasi kelayakan hak sipil Anda tanpa perlu tahu, menyimpan,
-              ataupun mengirimkan salinan fisik data biometrik Anda ke server pusat.
-            </p>
-            <ul className="mt-6 space-y-3">
+            <Reveal delay={0.1}>
+              <span className="inline-flex items-center rounded-full border border-gold-400 px-4 py-1.5 text-xs font-semibold text-gold-400">
+                PRIVASI MUTLAK DIJAMIN
+              </span>
+              <h2 className="mt-5 font-display text-3xl font-extrabold leading-tight sm:text-4xl">
+                Kedaulatan Data Berbasis Zero-Knowledge Proofs
+              </h2>
+              <p className="mt-4 text-white/60">
+                Kios GovFlow menggunakan protokol ZKP yang revolusioner. Kios dapat
+                mengonfirmasi kelayakan hak sipil Anda tanpa perlu tahu, menyimpan,
+                ataupun mengirimkan salinan fisik data biometrik Anda ke server pusat.
+              </p>
+            </Reveal>
+            <Reveal as="ul" stagger delay={0.2} className="mt-6 space-y-3">
               {ZKP_POINTS.map((point) => (
                 <li key={point} className="flex items-start gap-3 text-sm text-white/80">
                   <CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-sky-400" aria-hidden="true" />
                   {point}
                 </li>
               ))}
-            </ul>
+            </Reveal>
           </div>
         </div>
       </section>
@@ -432,27 +452,28 @@ export default function GovFlowLandingPage() {
 
       {/* ================= CTA ================= */}
       <section className="mx-auto max-w-3xl px-6 py-24 text-center">
-        <span className="inline-flex items-center rounded-full border border-gold-400 px-4 py-1.5 text-xs font-semibold text-gold-600">
-          MARI MEMULAI TRANSISI
-        </span>
-        <h2 className="mt-5 font-display text-3xl font-extrabold text-navy-900 sm:text-4xl">
-          Siap Menikmati Layanan Publik Instan?
-        </h2>
-        <p className="mt-4 text-navy-500">
-          Temukan Kios GovFlow terdekat di kota Anda atau coba simulasi digital untuk
-          mendaftarkan enkripsi vena telapak tangan Anda secara mandiri dalam waktu
-          kurang dari 2 menit.
-        </p>
-        <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
-          <button className="rounded-full bg-gold-500 px-6 py-3.5 text-sm font-semibold text-navy-950 shadow-sm transition-colors hover:bg-gold-400">
-            Mulai Pendaftaran Mandiri
-            
-          </button>
-          <button className="inline-flex items-center gap-2 rounded-full border border-navy-900/15 px-6 py-3.5 text-sm font-semibold text-navy-800 transition-colors hover:bg-navy-900/5">
-            <MapPin className="h-4 w-4" aria-hidden="true" />
-            Cari Kios Terdekat (Maps)
-          </button>
-        </div>
+        <Reveal>
+          <span className="inline-flex items-center rounded-full border border-gold-400 px-4 py-1.5 text-xs font-semibold text-gold-600">
+            MARI MEMULAI TRANSISI
+          </span>
+          <h2 className="mt-5 font-display text-3xl font-extrabold text-navy-900 sm:text-4xl">
+            Siap Menikmati Layanan Publik Instan?
+          </h2>
+          <p className="mt-4 text-navy-500">
+            Temukan Kios GovFlow terdekat di kota Anda atau coba simulasi digital untuk
+            mendaftarkan enkripsi vena telapak tangan Anda secara mandiri dalam waktu
+            kurang dari 2 menit.
+          </p>
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
+            <button className="rounded-full bg-gold-500 px-6 py-3.5 text-sm font-semibold text-navy-950 shadow-sm transition-colors hover:bg-gold-400">
+              Mulai Pendaftaran Mandiri
+            </button>
+            <button className="inline-flex items-center gap-2 rounded-full border border-navy-900/15 px-6 py-3.5 text-sm font-semibold text-navy-800 transition-colors hover:bg-navy-900/5">
+              <MapPin className="h-4 w-4" aria-hidden="true" />
+              Cari Kios Terdekat (Maps)
+            </button>
+          </div>
+        </Reveal>
       </section>
 
       {/* ================= FOOTER ================= */}
