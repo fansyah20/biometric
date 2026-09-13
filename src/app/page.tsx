@@ -473,7 +473,7 @@ export default function GovFlowLandingPage() {
       <footer className="bg-navy-950 pt-16 text-white/70">
         <div className="mx-auto grid max-w-7xl gap-10 px-6 pb-10 sm:grid-cols-2 lg:grid-cols-4">
           <div>
-            <div>
+            <div className="flex items-center gap-2">
              <Image
               src="/images/palmid-hand-icon-transparent.png"
               alt="Logo PalmID"
