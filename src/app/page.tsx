@@ -216,14 +216,7 @@ export default function GovFlowLandingPage() {
                 priority
               />
             </div>
-            <div className="absolute bottom-4 right-4 flex items-center gap-3 rounded-2xl bg-navy-950/90 px-4 py-3 text-white shadow-lg">
-              <span className="flex h-8 w-8 items-center justify-center rounded-full bg-emerald-500/20">
-                <CheckCircle2 className="h-4 w-4 text-emerald-400" aria-hidden="true" />
-              </span>
-              <div className="text-left">
-                <p className="text-sm font-semibold">Vena Telapak Terdeteksi</p>
-                <p className="text-xs text-white/50">ZKP Validated • 0.8s</p>
-              </div>
+            <div>
             </div>
           </Reveal>
         </div>
