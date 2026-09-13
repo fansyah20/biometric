@@ -3,10 +3,10 @@ import type { HTMLAttributes } from "react";
 type Tone = "gold" | "emerald" | "neutral" | "danger";
 
 const TONE_CLASSES: Record<Tone, string> = {
-  gold: "bg-gold-400/15 text-gold-300 border-gold-400/30",
-  emerald: "bg-emerald-500/15 text-emerald-400 border-emerald-500/30",
-  neutral: "bg-white/10 text-white/70 border-white/15",
-  danger: "bg-red-500/15 text-red-300 border-red-500/30",
+  gold: "bg-amber-50 text-amber-700 border-amber-200",
+  emerald: "bg-emerald-50 text-emerald-700 border-emerald-200",
+  neutral: "bg-slate-100 text-slate-600 border-slate-200",
+  danger: "bg-red-50 text-red-700 border-red-200",
 };
 
 interface BadgeProps extends HTMLAttributes<HTMLSpanElement> {

@@ -34,8 +34,8 @@ export function EfinLookupWidget() {
             <KeyRound className="h-5 w-5 text-emerald-300" aria-hidden="true" />
           </div>
           <div>
-            <h3 className="font-display text-base text-white">Cek / Lupa EFIN</h3>
-            <p className="text-sm text-white/50">Diverifikasi otomatis via biometrik</p>
+            <h3 className="font-display text-base text-ink">Cek / Lupa EFIN</h3>
+            <p className="text-sm text-ink-muted">Diverifikasi otomatis via biometrik</p>
           </div>
         </div>
         <Badge tone={MOCK_EFIN.status === "active" ? "emerald" : "danger"}>
@@ -44,17 +44,17 @@ export function EfinLookupWidget() {
       </CardHeader>
 
       {revealed ? (
-        <div className="rounded-xl bg-navy-900/60 p-4">
+        <div className="rounded-xl bg-navy-900 p-4">
           <p className="text-xs text-white/50">Nomor EFIN Anda</p>
           <p className="mt-1 font-mono text-2xl tracking-widest text-emerald-300">
             {MOCK_EFIN.efinMasked}
           </p>
-          <p className="mt-2 text-xs text-white/40">
+          <p className="mt-2 text-xs text-white/60">
             Terakhir diminta: {MOCK_EFIN.lastRequestedAt}
           </p>
         </div>
       ) : (
-        <p className="mb-4 text-sm text-white/60">
+        <p className="mb-4 text-sm text-ink-muted">
           Tekan tombol di bawah — sistem akan mencocokkan EFIN dengan data biometrik yang
           sudah terdaftar, tanpa perlu formulir manual.
         </p>

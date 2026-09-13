@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { PILLARS } from "@/types/service";
+import Image from "next/image"
 import {
   LayoutGrid,
   FileText,
@@ -31,9 +32,14 @@ export function Sidebar({ profileComplete }: SidebarProps) {
   return (
     <aside className="hidden w-64 shrink-0 border-r border-surface-border bg-white p-4 lg:flex lg:flex-col">
       <Link href="/dashboard" className="mb-6 flex items-center gap-2 px-2 py-2">
-        <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-brand-700 text-white font-display font-bold">
-          G
-        </div>
+        <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-700">
+  <Image
+    src="/images/palmid-hand-icon-transparent.png"
+    alt="GovFlow Logo"
+    width={24}
+    height={24}
+  />
+</div>
         <span className="font-display text-lg text-ink">GovFlow</span>
       </Link>
 

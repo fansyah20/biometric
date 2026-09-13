@@ -7,6 +7,7 @@ import { AuthLeftPanel } from "@/components/auth/AuthLeftPanel";
 import { Button } from "@/components/ui/Button";
 import { useAuth } from "@/context/AuthContext";
 import { ArrowLeft, ArrowRight, Eye, EyeOff, Hand, Lock, Mail, ShieldCheck } from "lucide-react";
+import { PalmVeinScanner } from "@/components/auth/PalmVeinScanner";
 
 type AuthTab = "email" | "biometric";
 
@@ -162,19 +163,7 @@ export default function LoginPage() {
                 </p>
               </form>
             ) : (
-              <div className="flex flex-col items-center py-6 text-center">
-                <div className="mb-5 flex h-[100px] w-[100px] items-center justify-center rounded-2xl border-2 border-dashed border-emerald-500 bg-emerald-50">
-                  <Hand className="h-12 w-12 text-emerald-500" aria-hidden="true" />
-                </div>
-                <h2 className="mb-2 text-lg font-bold text-ink">Tempelkan Telapak Tangan</h2>
-                <p className="mb-6 max-w-[300px] text-sm text-ink-muted">
-                  Fitur ini hanya tersedia di Kios GovFlow terdekat. Kunjungi kantor kelurahan atau mall
-                  terdekat yang memiliki terminal PalmID.
-                </p>
-                <Button variant="secondary" size="lg" className="w-full justify-center">
-                  Temukan Kios Terdekat →
-                </Button>
-              </div>
+              <PalmVeinScanner onSuccess={() => router.push("/dashboard")} />
             )}
           </div>
         </div>

@@ -21,7 +21,7 @@ interface ScannerAnimationProps {
 }
 
 const STATUS_RING: Record<BiometricScanStatus, string> = {
-  idle: "ring-white/10",
+  idle: "ring-slate-200",
   positioning: "ring-gold-400/50",
   scanning: "ring-emerald-400/70 animate-pulse",
   processing: "ring-emerald-400/70",
@@ -130,13 +130,13 @@ export function ScannerAnimation({ method, status, onCameraReady, onCameraError 
           {!capturedImage && <GuideOverlay method={method} />}
         </>
       ) : usesCamera && cameraError ? (
-        <div className="z-10 flex h-full w-full flex-col items-center justify-center gap-2 bg-navy-700 px-4 text-center">
-          <CameraOff className="h-8 w-8 text-white/40" aria-hidden="true" />
-          <p className="text-xs text-white/50">{cameraError}</p>
+        <div className="z-10 flex h-full w-full flex-col items-center justify-center gap-2 bg-slate-100 px-4 text-center">
+          <CameraOff className="h-8 w-8 text-ink-muted" aria-hidden="true" />
+          <p className="text-xs text-ink-muted">{cameraError}</p>
         </div>
       ) : (
-        <div className="flex h-28 w-28 items-center justify-center rounded-full bg-navy-700">
-          <Icon className="h-12 w-12 text-emerald-300" strokeWidth={1.5} aria-hidden="true" />
+        <div className="flex h-28 w-28 items-center justify-center rounded-full bg-brand-50">
+          <Icon className="h-12 w-12 text-brand-700" strokeWidth={1.5} aria-hidden="true" />
         </div>
       )}
 

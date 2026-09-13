@@ -34,8 +34,8 @@ export default function SertifikatPage() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="font-display text-2xl text-white">Sertifikat &amp; Surat</h1>
-        <p className="mt-1 text-sm text-white/50">
+        <h1 className="font-display text-2xl text-ink">Sertifikat &amp; Surat</h1>
+        <p className="mt-1 text-sm text-ink-muted">
           Cetak Suket Fiskal, e-Bupot, dan unduh sertifikat digital terverifikasi.
         </p>
       </div>

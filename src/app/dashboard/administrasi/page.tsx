@@ -26,8 +26,8 @@ export default function AdministrasiPage() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="font-display text-2xl text-white">Administrasi &amp; Identitas</h1>
-        <p className="mt-1 text-sm text-white/50">
+        <h1 className="font-display text-2xl text-ink">Administrasi &amp; Identitas</h1>
+        <p className="mt-1 text-sm text-ink-muted">
           Cetak NPWP, cek EFIN, cetak NIB, dan perbarui profil kependudukan.
         </p>
       </div>
@@ -40,17 +40,17 @@ export default function AdministrasiPage() {
         <Card>
           <CardHeader>
             <div className="flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-navy-700">
-                <UserCog className="h-5 w-5 text-emerald-300" aria-hidden="true" />
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-50">
+                <UserCog className="h-5 w-5 text-brand-700" aria-hidden="true" />
               </div>
               <div>
-                <h3 className="font-display text-base text-white">Update Profil Kependudukan</h3>
-                <p className="text-sm text-white/50">{user?.fullName}</p>
+                <h3 className="font-display text-base text-ink">Update Profil Kependudukan</h3>
+                <p className="text-sm text-ink-muted">{user?.fullName}</p>
               </div>
             </div>
           </CardHeader>
 
-          <label htmlFor="address" className="mb-1.5 block text-sm text-white/70">
+          <label htmlFor="address" className="mb-1.5 block text-sm text-ink-muted">
             Alamat Domisili
           </label>
           <textarea
@@ -61,7 +61,7 @@ export default function AdministrasiPage() {
               setAddress(e.target.value);
               setSaved(false);
             }}
-            className="w-full rounded-xl border border-white/15 bg-navy-900/60 px-4 py-3 text-sm text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400"
+            className="w-full rounded-xl border border-surface-border bg-surface-muted px-4 py-3 text-sm text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500"
           />
 
           <Button className="mt-4 w-full" size="md" loading={saving} onClick={handleSave}>
@@ -69,7 +69,7 @@ export default function AdministrasiPage() {
             Simpan Perubahan
           </Button>
           {saved && (
-            <p className="mt-2 text-center text-xs text-emerald-300">
+            <p className="mt-2 text-center text-xs text-emerald-600">
               Profil berhasil diperbarui.
             </p>
           )}

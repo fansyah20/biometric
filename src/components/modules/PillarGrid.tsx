@@ -22,10 +22,10 @@ export function PillarGrid() {
                 <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-navy-700">
                   <Icon className="h-5 w-5 text-emerald-300" aria-hidden="true" />
                 </div>
-                <ArrowUpRight className="h-4 w-4 text-white/30 transition-colors group-hover:text-emerald-300" />
+                <ArrowUpRight className="h-4 w-4 text-ink-muted/50 transition-colors group-hover:text-emerald-500" />
               </div>
-              <h3 className="mt-4 font-display text-base text-white">{pillar.title}</h3>
-              <p className="mt-1 text-sm text-white/50">{pillar.subtitle}</p>
+              <h3 className="mt-4 font-display text-base text-ink">{pillar.title}</h3>
+              <p className="mt-1 text-sm text-ink-muted">{pillar.subtitle}</p>
             </Card>
           </Link>
         );

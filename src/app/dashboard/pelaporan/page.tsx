@@ -74,8 +74,8 @@ export default function PelaporanPage() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="font-display text-2xl text-white">Pelaporan &amp; Status</h1>
-        <p className="mt-1 text-sm text-white/50">
+        <h1 className="font-display text-2xl text-ink">Pelaporan &amp; Status</h1>
+        <p className="mt-1 text-sm text-ink-muted">
           SPT Tahunan, riwayat tunggakan pajak, dan status kelayakan bansos.
         </p>
       </div>
@@ -84,19 +84,19 @@ export default function PelaporanPage() {
         <Card>
           <CardHeader>
             <div className="flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-navy-700">
-                <ClipboardList className="h-5 w-5 text-emerald-300" aria-hidden="true" />
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-50">
+                <ClipboardList className="h-5 w-5 text-brand-700" aria-hidden="true" />
               </div>
               <div>
-                <h3 className="font-display text-base text-white">Lapor SPT Tahunan</h3>
-                <p className="text-sm text-white/50">Formulir {SPT.formType} &middot; Tahun {SPT.taxYear}</p>
+                <h3 className="font-display text-base text-ink">Lapor SPT Tahunan</h3>
+                <p className="text-sm text-ink-muted">Formulir {SPT.formType} &middot; Tahun {SPT.taxYear}</p>
               </div>
             </div>
             <Badge tone={sptStatus === "draft" ? "gold" : "emerald"}>
               {SPT_STATUS_LABEL[sptStatus]}
             </Badge>
           </CardHeader>
-          <p className="mb-4 text-sm text-white/60">
+          <p className="mb-4 text-sm text-ink-muted">
             {sptStatus === "draft"
               ? "Draft SPT Anda sudah terisi otomatis dari data pemotongan. Tinjau lalu kirim."
               : "SPT telah dikirim dan menunggu verifikasi Direktorat Jenderal Pajak."}
@@ -116,31 +116,31 @@ export default function PelaporanPage() {
         <Card>
           <CardHeader>
             <div className="flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-navy-700">
-                <AlertTriangle className="h-5 w-5 text-gold-300" aria-hidden="true" />
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-50">
+                <AlertTriangle className="h-5 w-5 text-amber-600" aria-hidden="true" />
               </div>
               <div>
-                <h3 className="font-display text-base text-white">Riwayat Tunggakan Pajak</h3>
-                <p className="text-sm text-white/50">{ARREARS.length} tunggakan aktif</p>
+                <h3 className="font-display text-base text-ink">Riwayat Tunggakan Pajak</h3>
+                <p className="text-sm text-ink-muted">{ARREARS.length} tunggakan aktif</p>
               </div>
             </div>
           </CardHeader>
           {ARREARS.length === 0 ? (
-            <p className="text-sm text-white/50">Tidak ada tunggakan pajak. Semua lunas.</p>
+            <p className="text-sm text-ink-muted">Tidak ada tunggakan pajak. Semua lunas.</p>
           ) : (
             <ul className="space-y-2">
               {ARREARS.map((arrear) => (
                 <li
                   key={arrear.id}
-                  className="flex items-center justify-between rounded-xl bg-navy-900/60 p-4"
+                  className="flex items-center justify-between rounded-xl bg-surface-muted p-4"
                 >
                   <div>
-                    <p className="text-sm text-white">{arrear.periodLabel}</p>
-                    <p className="text-xs text-red-300">
+                    <p className="text-sm text-ink">{arrear.periodLabel}</p>
+                    <p className="text-xs text-red-600">
                       Terlambat {arrear.overdueDays} hari
                     </p>
                   </div>
-                  <p className="font-mono text-sm text-white">{formatIdr(arrear.amountIdr)}</p>
+                  <p className="font-mono text-sm text-ink">{formatIdr(arrear.amountIdr)}</p>
                 </li>
               ))}
             </ul>
@@ -150,18 +150,18 @@ export default function PelaporanPage() {
         <Card className="lg:col-span-2">
           <CardHeader>
             <div className="flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-navy-700">
-                <HeartHandshake className="h-5 w-5 text-emerald-300" aria-hidden="true" />
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-50">
+                <HeartHandshake className="h-5 w-5 text-brand-700" aria-hidden="true" />
               </div>
               <div>
-                <h3 className="font-display text-base text-white">Status Kelayakan Bansos / PKH</h3>
-                <p className="text-sm text-white/50">{BANSOS.programName}</p>
+                <h3 className="font-display text-base text-ink">Status Kelayakan Bansos / PKH</h3>
+                <p className="text-sm text-ink-muted">{BANSOS.programName}</p>
               </div>
             </div>
             <Badge tone={BANSOS_TONE[BANSOS.status]}>{BANSOS_LABEL[BANSOS.status]}</Badge>
           </CardHeader>
-          <p className="text-sm text-white/60">{BANSOS.note}</p>
-          <p className="mt-2 text-xs text-white/40">Terakhir diperbarui {BANSOS.lastUpdated}</p>
+          <p className="text-sm text-ink-muted">{BANSOS.note}</p>
+          <p className="mt-2 text-xs text-ink-muted">Terakhir diperbarui {BANSOS.lastUpdated}</p>
         </Card>
       </div>
     </div>

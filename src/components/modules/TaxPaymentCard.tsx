@@ -57,17 +57,17 @@ export function TaxPaymentCard({ bill, onPaid }: TaxPaymentCardProps) {
               <Wallet className="h-5 w-5 text-emerald-300" aria-hidden="true" />
             </div>
             <div>
-              <h3 className="font-display text-base text-white">{bill.label}</h3>
-              <p className="text-sm text-white/50">{bill.periodLabel}</p>
+              <h3 className="font-display text-base text-ink">{bill.label}</h3>
+              <p className="text-sm text-ink-muted">{bill.periodLabel}</p>
             </div>
           </div>
           <Badge tone={STATUS_TONE[status]}>{STATUS_LABEL[status]}</Badge>
         </CardHeader>
 
-        <div className="rounded-xl bg-navy-900/60 p-4">
-          <p className="text-xs text-white/50">Jumlah Tagihan</p>
+        <div className="rounded-xl bg-navy-900 p-4">
+          <p className="text-xs text-white/70">Jumlah Tagihan</p>
           <p className="mt-1 font-mono text-2xl text-white">{formatIdr(bill.amountIdr)}</p>
-          <p className="mt-2 text-xs text-white/40">Jatuh tempo {bill.dueDate}</p>
+          <p className="mt-2 text-xs text-white/60">Jatuh tempo {bill.dueDate}</p>
         </div>
 
         <Button

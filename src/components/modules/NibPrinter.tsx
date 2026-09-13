@@ -26,8 +26,8 @@ export function NibPrinter() {
             <Building2 className="h-5 w-5 text-emerald-300" aria-hidden="true" />
           </div>
           <div>
-            <h3 className="font-display text-base text-white">Cetak NIB (OSS)</h3>
-            <p className="text-sm text-white/50">KBLI {MOCK_NIB.kbliCode}</p>
+            <h3 className="font-display text-base text-ink">Cetak NIB (OSS)</h3>
+            <p className="text-sm text-ink-muted">KBLI {MOCK_NIB.kbliCode}</p>
           </div>
         </div>
         <Badge tone="emerald">
@@ -35,11 +35,11 @@ export function NibPrinter() {
         </Badge>
       </CardHeader>
 
-      <div className="rounded-xl bg-navy-900/60 p-4">
+      <div className="rounded-xl bg-navy-900 p-4">
         <p className="text-xs text-white/50">Nomor Induk Berusaha</p>
         <p className="mt-1 font-mono text-lg text-white">{MOCK_NIB.nib}</p>
-        <p className="mt-2 text-sm text-white/60">{MOCK_NIB.businessName}</p>
-        <p className="text-xs text-white/40">Diterbitkan {MOCK_NIB.issuedAt}</p>
+        <p className="mt-2 text-sm text-white/80">{MOCK_NIB.businessName}</p>
+        <p className="text-xs text-white/60">Diterbitkan {MOCK_NIB.issuedAt}</p>
       </div>
 
       <Button

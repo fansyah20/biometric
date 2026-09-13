@@ -3,6 +3,7 @@
 import { useAuth } from "@/context/AuthContext";
 import { maskNik } from "@/utils/cryptoSim";
 import { LogOut, Fingerprint } from "lucide-react";
+import Image from "next/image";
 
 export function Header() {
   const { user, logout } = useAuth();
@@ -11,9 +12,14 @@ export function Header() {
   return (
     <header className="flex items-center justify-between border-b border-surface-border bg-white px-6 py-4">
       <div className="flex items-center gap-3">
-        <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-brand-700 text-white font-display font-bold">
-          G
-        </div>
+        <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-700">
+  <Image
+    src="/images/palmid-hand-icon-transparent.png"
+    alt="GovFlow Logo"
+    width={24}
+    height={24}
+  />
+</div>
         <div>
           <p className="font-display text-sm text-ink">GovFlow Kiosk</p>
           <p className="text-xs text-ink-muted">{user?.fullName ?? "Warga"}</p>
@@ -35,10 +41,10 @@ export function Header() {
 
         <button
           onClick={logout}
-          className="flex items-center gap-1.5 rounded-xl bg-red-50 px-3 py-1.5 text-sm text-red-600 hover:bg-red-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-300"
+          className="flex items-center gap-1.5 rounded-xl bg-red-600 px-3 py-1.5 text-sm font-medium text-white hover:bg-red-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-300"
         >
           <LogOut className="h-4 w-4" aria-hidden="true" />
-          Keluar
+           Keluar
         </button>
       </div>
     </header>

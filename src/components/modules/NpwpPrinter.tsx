@@ -34,14 +34,14 @@ export function NpwpPrinter() {
             <FileBadge className="h-5 w-5 text-emerald-300" aria-hidden="true" />
           </div>
           <div>
-            <h3 className="font-display text-base text-white">Cetak NPWP Instan</h3>
-            <p className="text-sm text-white/50">{MOCK_NPWP.kpp}</p>
+            <h3 className="font-display text-ink ">Cetak NPWP Instan</h3>
+            <p className="text-sm text-ink-muted">{MOCK_NPWP.kpp}</p>
           </div>
         </div>
         <Badge tone="gold">{MOCK_NPWP.status === "active" ? "Aktif" : "Non-Aktif"}</Badge>
       </CardHeader>
 
-      <div className="rounded-xl bg-navy-900/60 p-4">
+      <div className="rounded-xl bg-navy-900 p-4">
         <p className="text-xs text-white/50">Nomor NPWP</p>
         <p className="mt-1 font-mono text-lg text-white">{MOCK_NPWP.npwp}</p>
         <p className="mt-2 text-sm text-white/60">{MOCK_NPWP.taxpayerName}</p>

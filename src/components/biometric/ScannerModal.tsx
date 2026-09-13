@@ -67,7 +67,7 @@ export function ScannerModal({ open, method, seed, onClose, onEnrolled }: Scanne
   return (
     <Modal open={open} onClose={onClose} title={`Pendaftaran ${meta?.label ?? ""}`}>
       <div className="space-y-6 text-center">
-        <p className="text-sm text-white/60">{meta?.description}</p>
+        <p className="text-sm text-ink-muted">{meta?.description}</p>
 
         <ScannerAnimation
           method={method}
@@ -77,18 +77,18 @@ export function ScannerModal({ open, method, seed, onClose, onEnrolled }: Scanne
         />
 
         <div>
-          <div className="h-1.5 w-full overflow-hidden rounded-full bg-navy-700">
+          <div className="h-1.5 w-full overflow-hidden rounded-full bg-surface-muted">
             <div
               className="h-full rounded-full bg-emerald-500 transition-all duration-500"
               style={{ width: `${cameraPending ? 5 : progress}%` }}
             />
           </div>
-          <p className="mt-3 text-sm font-medium text-white" aria-live="polite">
+          <p className="mt-3 text-sm font-medium text-ink" aria-live="polite">
             {cameraPending ? "Menyalakan kamera…" : STATUS_LABEL[status]}
           </p>
-          {error && <p className="mt-1 text-sm text-red-300">{error}</p>}
+          {error && <p className="mt-1 text-sm text-red-600">{error}</p>}
           {status === "success" && hashPreview && (
-            <p className="mt-1 font-mono text-xs text-emerald-300">{hashPreview}</p>
+            <p className="mt-1 font-mono text-xs text-emerald-600">{hashPreview}</p>
           )}
         </div>
 

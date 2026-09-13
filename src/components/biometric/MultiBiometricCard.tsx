@@ -28,8 +28,8 @@ export function MultiBiometricCard({ nikSeed }: MultiBiometricCardProps) {
     <Card>
       <div className="mb-5 flex items-center justify-between">
         <div>
-          <h3 className="font-display text-lg text-white">Master Signature</h3>
-          <p className="text-sm text-white/60">
+          <h3 className="font-display text-lg text-ink">Master Signature</h3>
+          <p className="text-sm text-ink-muted">
             Daftarkan minimal satu metode untuk akses tanpa HP/dokumen fisik.
           </p>
         </div>
@@ -45,20 +45,20 @@ export function MultiBiometricCard({ nikSeed }: MultiBiometricCardProps) {
           return (
             <li
               key={meta.id}
-              className="flex items-center justify-between gap-3 rounded-xl border border-white/10 bg-navy-900/60 p-4"
+              className="flex items-center justify-between gap-3 rounded-xl border border-surface-border bg-surface-muted p-4"
             >
               <div className="flex items-center gap-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-navy-700">
-                  <Icon className="h-5 w-5 text-emerald-300" aria-hidden="true" />
+                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-brand-50">
+                  <Icon className="h-5 w-5 text-brand-700" aria-hidden="true" />
                 </div>
                 <div>
-                  <p className="flex items-center gap-1.5 text-sm font-medium text-white">
+                  <p className="flex items-center gap-1.5 text-sm font-medium text-ink">
                     {meta.label}
                     {meta.accessibilityFriendly && (
-                      <Accessibility className="h-3.5 w-3.5 text-gold-300" aria-label="Ramah aksesibilitas" />
+                      <Accessibility className="h-3.5 w-3.5 text-amber-500" aria-label="Ramah aksesibilitas" />
                     )}
                   </p>
-                  <p className="text-xs text-white/50">
+                  <p className="text-xs text-ink-muted">
                     {record.enrolled ? "Terdaftar" : "Belum terdaftar"}
                   </p>
                 </div>

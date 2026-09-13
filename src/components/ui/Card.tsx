@@ -11,7 +11,7 @@ interface CardProps extends HTMLAttributes<HTMLDivElement> {
   tone?: Tone;
 }
 
-export function Card({ tone = "dark", className = "", children, ...rest }: CardProps) {
+export function Card({ tone = "light", className = "", children, ...rest }: CardProps) {
   return (
     <div className={["rounded-kiosk border p-6", TONE_CLASSES[tone], className].join(" ")} {...rest}>
       {children}

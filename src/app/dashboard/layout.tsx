@@ -23,8 +23,8 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
 
   if (step !== "authenticated") {
     return (
-      <div className="flex min-h-screen items-center justify-center bg-navy-900">
-        <p className="text-sm text-white/50">Memeriksa sesi…</p>
+      <div className="flex min-h-screen items-center justify-center bg-surface">
+        <p className="text-sm text-ink-muted">Memeriksa sesi…</p>
       </div>
     );
   }
@@ -33,24 +33,24 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
   const onProfilePage = pathname === "/dashboard/profil";
 
   return (
-    <div className="flex min-h-screen bg-navy-900">
+    <div className="flex min-h-screen bg-surface">
       <Sidebar profileComplete={complete} />
       <div className="flex flex-1 flex-col">
         <Header />
         <main className="flex-1 overflow-y-auto p-6">
           {!complete && !onProfilePage && (
-            <div className="mb-6 flex items-center justify-between gap-4 rounded-kiosk border border-gold-400/30 bg-gold-400/5 p-4">
+            <div className="mb-6 flex items-center justify-between gap-4 rounded-kiosk border border-amber-200 bg-amber-50 p-4">
               <div className="flex items-center gap-3">
-                <ShieldAlert className="h-5 w-5 text-gold-300" aria-hidden="true" />
-                <p className="text-sm text-white/80">
+                <ShieldAlert className="h-5 w-5 text-amber-600" aria-hidden="true" />
+                <p className="text-sm text-ink">
                   Lengkapi data diri, dokumen, dan Master Signature di{" "}
-                  <span className="font-medium text-white">Profil</span> sebelum memakai layanan
+                  <span className="font-medium text-ink">Profil</span> sebelum memakai layanan
                   otomatis.
                 </p>
               </div>
               <Link
                 href="/dashboard/profil"
-                className="flex items-center gap-1.5 whitespace-nowrap rounded-xl bg-gold-400 px-4 py-2 text-sm font-medium text-navy-950 hover:bg-gold-300"
+                className="flex items-center gap-1.5 whitespace-nowrap rounded-xl bg-amber-500 px-4 py-2 text-sm font-medium text-white hover:bg-amber-600"
               >
                 Lengkapi Profil
                 <ArrowRight className="h-4 w-4" aria-hidden="true" />
