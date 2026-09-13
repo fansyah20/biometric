@@ -1,4 +1,5 @@
 import { Shield, Hand, CheckCircle2, Phone } from "lucide-react";
+import Image from "next/image";
 
 const trustBadges = [
   { icon: Shield, label: "Zero-Knowledge Proof Encryption", tone: "bg-brand-700/20 text-brand-200" },
@@ -27,14 +28,20 @@ export function AuthLeftPanel() {
       {/* Top: logo + badge */}
       <div className="relative z-10 p-10">
         <div className="mb-6 flex items-center gap-3">
-          <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-brand-700">
-            <Shield className="h-6 w-6 text-white" aria-hidden="true" />
-          </div>
-          <div>
-            <div className="text-xl font-bold leading-none tracking-tight text-white">GovFlow</div>
-            <div className="text-[11px] font-semibold tracking-widest text-emerald-400">PalmID</div>
-          </div>
-        </div>
+  <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-brand-700 p-1.5">
+    <Image
+      src="/images/palmid-hand-icon-transparent.png"
+      alt="Logo PalmID"
+      width={32}
+      height={32}
+      className="h-full w-full object-contain"
+    />
+  </div>
+  <div>
+    <div className="text-xl font-bold leading-none tracking-tight text-white">GovFlow</div>
+    <div className="text-[11px] font-semibold tracking-widest text-emerald-400">PalmID</div>
+  </div>
+</div>
 
         <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1.5">
           <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />

@@ -120,7 +120,7 @@ export default function GovFlowLandingPage() {
           <div className="flex items-center gap-3">
             <div className="flex h-9 w-9 items-center justify-center rounded-full bg-navy-800 p-1.5">
              <Image
-              src="/images/palmid-hand-icon.png"
+              src="/images/palmid-hand-icon-transparent.png"
               alt="Logo PalmID"
               width={24}
               height={24}
